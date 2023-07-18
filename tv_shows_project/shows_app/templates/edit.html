@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update page</title>
+</head>
+<body>
+    <p>go back to</p> <a href="/">main page</a>
+    <p>edit show {{show_update.id}}</p>
+    {% if messages %}
+<ul class="messages">    
+    {% for message in messages %}    
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+    {% endfor %}
+</ul>
+{% endif %}
+
+    <form action="{% url 'update_show' id=show_update.id%}" method="post">
+        {% csrf_token %}
+        <p>title</p>
+  <input type="text"  name="title"><br>
+  <p>network</p>
+  <input type="text"  name="network">
+  <p>description</p>
+  <input type="text"  name="description">
+  <p>date of relase</p>
+  <input type="date"  name="releace_date">
+  
+  <input type="submit" value="update">
+    </form>
+<a href="{% url 'desc_page' id=show_update.id %}">go to show</a>
+
+</body>
+</html>

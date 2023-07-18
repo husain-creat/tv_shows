@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  
+    <table>
+        {%for show in all_shows%}
+        <tr>
+            <td>{{show.id}}</td>
+            <td>{{show.title}}</td>
+            <td>{{show.network}}</td>
+            <td>{{show.description}}</td>
+            <td>{{show.releace_date}}</td>
+            <td><a href="{% url 'desc_page' id=show.id%}">show</a>| <a href="{% url 'update_show' id=show.id%}">edit</a>|<a href="#">delete</a></td>
+            
+        </tr>
+        {%endfor%}
+    </table>
+    <a href="shows/new">create new show</a>
+
+</body>
+</html>

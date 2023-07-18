@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new show</title>
+</head>
+<body>
+    <p>go back to</p> <a href="/">main page</a>
+    <form action="{% url 'new_show'%}" method="post">
+        {% csrf_token %}
+        <p>title</p>
+  <input type="text"  name="title"><br>
+  <p>network</p>
+  <input type="text"  name="network">
+  <p>description</p>
+  <input type="text"  name="description">
+  <p>date of relase</p>
+  <input type="date"  name="releace_date">
+  
+  <input type="submit" value="create">
+    </form>
+</body>
+</html>
